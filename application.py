@@ -15,7 +15,7 @@ class Drink(db.Model):
 
 @app.route('/')
 def index():
-    return 'Hello!'
+    return '<h1>Hello World!</h1>'
 
 @app.route('/drinks')
 def get_drinks():
