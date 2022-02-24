@@ -11,8 +11,8 @@ COPY requirements.txt ./
 # Install production dependencies.
 RUN pip install -r requirements.txt
 
-COPY application.py ./
-ENV FLASK_APP=application.py
+COPY main.py ./
+ENV FLASK_APP=main.py
 ENV FLASK_ENV=development
 ENV FLASK_RUN_PORT=5000
 
