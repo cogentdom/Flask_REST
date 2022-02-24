@@ -1,6 +1,6 @@
-from application import db
+from main import db
 db.create_all()
-from application import Drink
+from main import Drink
 drink = Drink(name="Grape Soda", description="Taste like grape")
 db.session.add(drink)
 db.session.commit()

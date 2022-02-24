@@ -46,3 +46,6 @@ def delete_drink():
         return {'error': 'not found'}
     db.session.delete(drink)
     return {'message': 'yeet!@'}
+
+if __name__ == "__main__":
+    app.run(debug=True)

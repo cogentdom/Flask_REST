@@ -16,7 +16,6 @@ ENV FLASK_APP=application.py
 ENV FLASK_ENV=development
 ENV FLASK_RUN_PORT=5000
 
-COPY gen_data.py ./
-ENTRYPOINT [ "python", "./gen_data.py"]
+COPY data.db ./
 
-CMD [ "flask" , "run" ]
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
