@@ -9,7 +9,7 @@ WORKDIR $APP_HOME
 COPY requirements.txt ./
 
 # Install production dependencies.
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY application.py ./
 ENV FLASK_APP=application.py
@@ -17,7 +17,6 @@ ENV FLASK_ENV=development
 ENV FLASK_RUN_PORT=5000
 
 COPY gen_data.py ./
-CMD ["python", "gen_data.py"]
+ENTRYPOINT [ "python", "./gen_data.py"]
 
-ENTRYPOINT [ "flask" ]
-CMD [ "run" ]
+CMD [ "flask" , "run" ]
